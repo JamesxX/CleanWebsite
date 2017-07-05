@@ -1,2 +1,3 @@
-# CleanWebsite
-A small and simple website made with angular
+--Clean Website--
+
+![Clean Website Image](screencapture-localhost-cleanwbst-1464889607979.png "Clean Website")

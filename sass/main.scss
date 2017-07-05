@@ -1,0 +1,270 @@
+/* SASS sass/main.css */
+
+/* CONFIG */
+$font-stack: 'Roboto', sans-serif;
+$line-height: 161.8034%;
+
+$body-background: #F1F1F1;
+$body-color: #222;
+$body-wdith: 320px;
+
+$container-max-width: 1400px;
+
+$article-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+$article-background: #FFF;
+$article-author-color: #0079C4;
+$article-text-color: #555;
+$article-button-shadow: $article-shadow;
+$article-button-border: #CCC;
+$article-badge-background: #222;
+$article-badge-color: #EEE;
+
+$footer-background: #555;
+$footer-color: #EEE;
+/* END CONFIG */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin transition($transitions...) {
+	-webkit-transition: $transitions; /* Safari */
+	transition: $transitions;
+}
+
+body {
+	
+	background-color: $body-background;
+	color: $body-color;
+	margin: 0;
+	
+	font-family: $font-stack;
+	line-height: $line-height;
+	
+	min-width: $body-wdith;
+	width: auto !important;
+	width: $body-wdith;
+
+	.container {
+		
+		max-width: $container-max-width;
+		margin: auto;
+	
+		.title {
+	
+			padding: 0.01em 16px;
+			padding-top: 32px!important;
+			padding-bottom: 32px!important;
+			
+			text-align: center;
+
+			h1 {
+				
+				font-weight: 500;
+				
+			} /* h1 */
+			
+			h4 {
+				
+				font-weight: 300;
+				
+			} /* h4 */
+			
+		} /* .title */
+		
+		#content {
+			
+			width: 100%;
+		
+			&:after {
+				
+				clear: both;
+				display: table;
+				content: "";
+				
+			} /* &:after */
+			
+			@media screen and (min-width: 1000px) {
+				
+				.main-content {
+					
+					float: left;
+					width: 66.666%
+					
+				} /* .main-container */
+				
+				.side-content {
+		
+					float: left;
+					width: 33.333%
+					
+				} /* .side-content */
+				
+			} /* @media screen and (min-width: 1000px) */
+			
+			/* Article */
+			article {
+	
+				@include box-shadow( $article-shadow );
+				background-color: $article-background;
+				
+				margin: 16px;
+				margin-bottom: 40px;
+				
+				img {
+					
+					margin: 0;
+					width: 100%;
+					
+				} /* img */
+				
+				header {
+					
+					margin: 0;
+					
+					padding: 10px;
+					padding-left: 20px;
+					padding-right: 20px;
+				
+					h1 {
+						
+						font-weight: 500;
+						margin-top: 5px;
+						margin-bottom: 5px;
+						
+					} /* h1 */
+
+					h4 {
+						
+						font-weight: 400;
+						margin-top: 5px;
+						margin-bottom: 5px;
+					
+						.author {
+							
+							font-weight: 500;
+							color: $article-author-color;
+							
+						} /* .author */
+
+						time {
+							
+							font-weight: 300;
+							
+						} /* time */
+						
+					} /* h4 */
+					
+					p {
+						
+						margin: 0;
+						
+						padding-left: 20px;
+						padding-right: 20px;
+						padding-top: 20px;
+						padding-bottom: 30px;
+						
+						color: $article-text-color;
+						
+					} /* p */
+					
+					.footer {
+						
+						margin: 0;
+						
+						padding-left: 20px;
+						padding-right: 20px;
+						padding-top: 0px;
+						padding-bottom: 30px;
+					
+						button.show-more {
+	
+							float: left;
+							
+							border: 1px solid $article-button-border !important;
+							padding: 12px 24px!important;
+							
+							background-color: $article-background;
+							
+							display: inline-block;
+							vertical-align: middle;
+							text-transform: uppercase;
+							text-align: center;
+							
+							cursor: pointer;
+							font-weight: 500;
+							
+							@include transition( box-shadow 0.5s );
+						
+							&:hover {
+	
+								@include box-shadow( $article-button-shadow );
+								@include transition( box-shadow 0.5s );
+								
+							} /* &:hover */
+							
+						} /* button.show-more */
+						
+						.comments {
+	
+							float: right;
+							
+							padding: 12px 24px!important;
+							background-color: #FFF;
+							
+							display: inline-block;
+							vertical-align: middle;
+							text-align: center;
+
+							font-weight: 500;
+							
+							.badge {
+	
+								border-radius: 50%;
+								background-color: $article-badge-background;
+								color: $article-badge-color;
+								
+								display: inline-block;
+								
+								padding-left: 8px;
+								padding-right: 8px;
+								
+							} /* .badge */
+							
+							&:after {
+								clear: both;
+								content: "";
+								display: table;
+								
+							} /* &:after */
+							
+						} /* .comments */
+						
+					} /* .footer */
+					
+				} /* header */
+				
+			} /* article */
+			
+		} /* #content */
+		
+	} /* .container */
+	
+	footer {
+	
+		margin: 0;
+		margin-top: 50px;
+		
+		padding: 25px;
+		
+		background-color: $footer-background;
+		color: $footer-color;
+		
+		text-align: center;
+	} /* footer */
+	
+} /* body */

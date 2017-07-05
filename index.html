@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		
+		<title>Website Test</title>
+		<meta name="description" content="Website Test" />
+		<meta name="author" content="Website Test" />
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+		
+		<link rel="stylesheet" href="css/main.css" />
+		
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="js/app.js"></script>
+
+	</head>
+
+	<body ng-app="BlogPosts" ng-controller="websiteController">
+		<div class="container">
+			
+			<div class="title" ng-controller="titleController" ng-include="titleTemplateUrl"></div>
+			
+			<div id="content">
+			
+				<div class="main-content" ng-controller="mainContentController" ng-include="blogPostTemplateUrl"> </div>
+
+				<div class="side-content" ng-include="sidebarTemplateUrl"> </div>
+		
+			</div>
+		
+		</div>
+		
+		<footer ng-controller="footerController" ng-include="footerTemplateUrl"> </footer>
+	</body>
+</html>
