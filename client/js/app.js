@@ -1,10 +1,10 @@
 var app = angular.module('BlogPosts', []);
 
 app.controller('websiteController', function($scope, $http){
-	$scope.titleTemplateUrl = "client/template/title.html";
-	$scope.blogPostTemplateUrl = "client/template/blogPost.html";
-	$scope.sidebarTemplateUrl = "client/template/sidebar.html";
-	$scope.footerTemplateUrl = "client/template/footer.html";
+	$scope.titleTemplateUrl = "template/title.html";
+	$scope.blogPostTemplateUrl = "template/blogPost.html";
+	$scope.sidebarTemplateUrl = "template/sidebar.html";
+	$scope.footerTemplateUrl = "template/footer.html";
 })
 
 app.controller('titleController', function($scope, $http){

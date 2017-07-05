@@ -3,3 +3,4 @@
 .sass-cache/*
 build.bat
 css/main.css.map
+node_modules/**
