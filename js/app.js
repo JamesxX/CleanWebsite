@@ -45,5 +45,5 @@ app.controller('mainContentController', function($scope, $http) {
 });
 
 app.controller('footerController', function($scope, $http){
-	$scope.footerCopyrightNotice = "Copyright (C) James R Swift, 2016";
+	$scope.footerCopyrightNotice = "Copyright (C) James R Swift, 2016 - 2017";
 })
