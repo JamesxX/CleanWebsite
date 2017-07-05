@@ -1,4 +1,4 @@
-#Clean Website
+# Clean Website
 
 A clean website design made with AngularJS. This website is designed with the purpose of a blog in mind.
 
