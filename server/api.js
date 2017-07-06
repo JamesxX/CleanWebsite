@@ -15,11 +15,11 @@ newPost.Media = "media/grass.jpg";
 newPost.Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at libero urna. Praesent auctor vestibulum eros, pretium ultrices quam vulputate in. Phasellus pretium purus massa, vel feugiat lacus eleifend non. Proin porta, lacus pulvinar lobortis luctus, tortor lorem sollicitudin dolor, placerat pharetra nisl sapien nec lectus. Aliquam erat volutpat. Proin auctor dapibus quam, eget tristique nunc pretium a. Vivamus ut elit felis. Suspendisse suscipit molestie vulputate. Aenean purus purus, tempus a urna sollicitudin, tempus varius sapien.",
 newPost.Comments = 2;
 
-const Postarray = [
-	newPost.output,
-	newPost.output,
-	newPost.output
-]
+const Postarray = [newPost.output]
+newPost.Media = "media/splash.jpg";
+Postarray[1] = newPost.output;
+newPost.Media = "media/sunset.jpg";
+Postarray[2] = newPost.output;
 
 api.get('/posts', function( req, res ){
 	res.json(Postarray);
