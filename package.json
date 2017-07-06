@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JamesxX/CleanWebsite#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "node-sass": "^4.5.3"
   }
 }

@@ -5,6 +5,7 @@ const api = express();
 
 const conf = require('./conf.js');
 const post = require('./post.class.js');
+const DynaSass = require('./sass/dynamic.js');
 
 var newPost = new post();
 newPost.Title = "This is an article";
@@ -33,7 +34,12 @@ api.get('/title', function( req, res ){
 });
 
 api.get('/footer', function( req, res ){
-	res.json(conf.websiteFooter) ;
+	res.json(conf.websiteFooter);
+});
+
+api.get('/sass', function( req, res ){
+	DynaSass();
+	res.json(true);
 });
 
 module.exports = api;
