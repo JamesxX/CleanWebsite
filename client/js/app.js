@@ -8,42 +8,26 @@ app.controller('websiteController', function($scope, $http){
 })
 
 app.controller('titleController', function($scope, $http){
-	$scope.websiteTitle = "Website Test";
-	$scope.websiteTagline = "The clean website look we all need but don't deserve";
+	
+	$http.get("api/title").then(function(response) {
+        $scope.websiteTitle = response.data.websiteTitle;
+		$scope.websiteTagline = response.data.websiteTagline;
+    });
+
 })
 
 app.controller('mainContentController', function($scope, $http) {
-   $scope.posts = [
-		{
-			title: "This is an article",
-			author: "James",
-			pubdate: "Monday, 30th of May",
-			
-			media: "media/grass.jpg",
-			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at libero urna. Praesent auctor vestibulum eros, pretium ultrices quam vulputate in. Phasellus pretium purus massa, vel feugiat lacus eleifend non. Proin porta, lacus pulvinar lobortis luctus, tortor lorem sollicitudin dolor, placerat pharetra nisl sapien nec lectus. Aliquam erat volutpat. Proin auctor dapibus quam, eget tristique nunc pretium a. Vivamus ut elit felis. Suspendisse suscipit molestie vulputate. Aenean purus purus, tempus a urna sollicitudin, tempus varius sapien.",
-			comments: 2
-		},
-		{
-			title: "This is an article",
-			author: "James",
-			pubdate: "Monday, 30th of May",
-			
-			media: "media/splash.jpg",
-			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at libero urna. Praesent auctor vestibulum eros, pretium ultrices quam vulputate in. Phasellus pretium purus massa, vel feugiat lacus eleifend non. Proin porta, lacus pulvinar lobortis luctus, tortor lorem sollicitudin dolor, placerat pharetra nisl sapien nec lectus. Aliquam erat volutpat. Proin auctor dapibus quam, eget tristique nunc pretium a. Vivamus ut elit felis. Suspendisse suscipit molestie vulputate. Aenean purus purus, tempus a urna sollicitudin, tempus varius sapien.",
-			comments: 50
-		},
-		{
-			title: "This is an article",
-			author: "James",
-			pubdate: "Monday, 30th of May",
-			
-			media: "media/sunset.jpg",
-			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at libero urna. Praesent auctor vestibulum eros, pretium ultrices quam vulputate in. Phasellus pretium purus massa, vel feugiat lacus eleifend non. Proin porta, lacus pulvinar lobortis luctus, tortor lorem sollicitudin dolor, placerat pharetra nisl sapien nec lectus. Aliquam erat volutpat. Proin auctor dapibus quam, eget tristique nunc pretium a. Vivamus ut elit felis. Suspendisse suscipit molestie vulputate. Aenean purus purus, tempus a urna sollicitudin, tempus varius sapien.",
-			comments: 2
-		}
-   ];
+	
+	$http.get("api/posts").then(function(response) {
+        $scope.posts = response.data;
+    });
+
 });
 
 app.controller('footerController', function($scope, $http){
-	$scope.footerCopyrightNotice = "Copyright (C) James R Swift, 2016 - 2017";
-})
+
+	$http.get("api/footer").then(function(response) {
+        $scope.footerCopyrightNotice = response.data;
+    });
+	
+});

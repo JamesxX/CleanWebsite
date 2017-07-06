@@ -2,7 +2,7 @@
 	<img ng-src="{{post.media}}"/>
 	<header>
 		<h1>{{post.title}}</h1>
-		<h4>Published by <span class="author">{{post.author}}</span> on <time pubdate>{{post.pubdate}}</time></h4>
+		<h4>Published by <span class="author">{{post.author}}</span> on <time datetime="{{post.pubdate | date : 'yyyy-MM-dd'}}">{{post.pubdate | date:'fullDate'}}</time></h4>
 	</header>
 	<p>{{post.content}}</p>
 	<div class="footer">
