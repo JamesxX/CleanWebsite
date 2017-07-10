@@ -32,6 +32,14 @@ const Config = {
 			'footer-background': '#555',
 			'footer-color': '#EEE'
 		}
+	},
+	
+	database: {
+		host     : 'localhost',
+		user     : 'cleanwebsite',
+		password : '',
+		database : 'cleanwebsite',
+		connectionLimit: 50
 	}
 	
 };

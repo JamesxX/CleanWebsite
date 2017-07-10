@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const api = require('./server/api.js');
 
+app.use(require('express-promise')());
+
 app.get('/', function (req, res) {
   res.sendFile( __dirname + '/client/index.html');
 });

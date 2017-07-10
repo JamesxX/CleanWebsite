@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/JamesxX/CleanWebsite#readme",
   "dependencies": {
+    "async-waterfall": "^0.1.5",
     "express": "^4.15.3",
-    "node-mysql": "^0.4.2",
+    "express-promise": "^0.4.0",
+    "mysql": "^2.13.0",
     "node-sass": "^4.5.3",
     "promise": "^8.0.0"
   }
